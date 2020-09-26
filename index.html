@@ -10,14 +10,43 @@
         <title>Hello World!</title>
     </head>
     <body>
-        <coingecko-coin-price-marquee-widget
-            coin-ids="bitcoin,ethereum,eos,ripple,litecoin"
-            currency="usd"
-            background-color="#ffffff"
-            locale="en"
-        ></coingecko-coin-price-marquee-widget>
-        <!-- You can also require other files to run in this process -->
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+        </div>
         <script src="./renderer.js"></script>
-        <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+        <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        >
+            {
+            "symbols": [
+              {
+                "description": "",
+                "proName": "BINANCE:BTCUSDT"
+              },
+              {
+                "description": "",
+                "proName": "BINANCE:FTMUSDT"
+              },
+              {
+                "description": "",
+                "proName": "BINANCE:XLMUSDT"
+              },
+              {
+                "description": "",
+                "proName": "BINANCE:SUSHIUSDT"
+              },
+              {
+                "description": "",
+                "proName": "BINANCE:TOMOUSDT"
+              }
+            ],
+            "colorTheme": "light",
+            "isTransparent": true,
+            "displayMode": "adaptive",
+            "locale": "en"
+          }
+        </script>
     </body>
 </html>

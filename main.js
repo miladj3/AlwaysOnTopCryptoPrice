@@ -7,25 +7,26 @@ function createWindow() {
   let mainWindow = new BrowserWindow({
     height: 60,
     center: true,
+    width: 4000,
     resizable: false,
     alwaysOnTop: true,
-    darkTheme: true,
-    hasShadow: true,
-    maxWidth: true,
+    darkTheme: false,
+    hasShadow: false,
     movable: false,
     skipTaskbar: true,
-    width: '100vh',
     frame: false,
-    x: 0,
+    x: 60,
     y: 0,
+    kiosk: false,
+    focusable: false,
+    transparent: true,
     closable: true,
-    width: 2500,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  //  mainWindow.setAlwaysOnTop(true, 'screen');
-  //  mainWindow.setMenuBarVisibility(false);
+  mainWindow.setIgnoreMouseEvents(true)
+
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 

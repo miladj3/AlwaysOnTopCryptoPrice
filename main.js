@@ -6,32 +6,33 @@ function createWindow() {
   // Create the browser window.
   let mainWindow = new BrowserWindow({
     height: 60,
+    fullscreen: false,
+    opacity: .5,
     center: true,
     width: 4000,
     resizable: false,
     alwaysOnTop: true,
     darkTheme: false,
-    hasShadow: false,
+    hasShadow: true,
     movable: false,
     skipTaskbar: true,
     frame: false,
     x: 60,
     y: 0,
-    kiosk: false,
+    kiosk: true,
     focusable: false,
-    transparent: true,
+    transparent: false,
     closable: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  mainWindow.setIgnoreMouseEvents(true)
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
-
+  mainWindow.setIgnoreMouseEvents(true);
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  //mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

@@ -17,7 +17,7 @@ app.whenReady().then(() => {
     movable: false,
     skipTaskbar: true,
     frame: false,
-    x: 60,
+    x: 0,
     y: (height - 60),
     focusable: false,
     transparent: false,
